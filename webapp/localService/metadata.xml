@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap17.bdo.ru/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCKS4_COMPH_SRV" xml:lang="ru" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_DraftAdministrativeDataType" sap:label="Административные данные для проекта" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Черновик (тех. ид.)" sap:quickinfo="Черновик (технический ид.)"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Ид. черн. сущности" sap:quickinfo="Ид. черновой сущности"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата создания черновика"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Автор черновика"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата последнего изменения черновика"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Автор последнего изменения черновика"/>
+                <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Тип доступа к черн." sap:quickinfo="Тип доступа к черновой версии"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Черновик в обработке с"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Черновик обрабатывает"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Черновик хранится у пользователя"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Черновик блокирован с"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Созданная мной черновая версия"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Последний черновик, измененный мною"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Я обрабатываю черновик"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Автор черновика (описание)"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Автор посл. изм. черновика (описание)" sap:quickinfo="Автор последнего изменения черновика (описание)"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Черновик обрабатывает (описание)"/>
+            </EntityType>
+            <EntityType Name="ZCKS4_C_EMPL_COMPHType" sap:label="Компетенции сотрудников-заголовок" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="db_key"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Activation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="db_key" Type="Edm.Guid" Nullable="false" sap:label="NodeID" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="empl" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="to_bp_vh/BusinessPartner_Text" sap:label="Деловой партнер" sap:quickinfo="Номер делового партнера" sap:value-list="standard"/>
+                <Property Name="resume" Type="Edm.String" MaxLength="1333" sap:label="Резюме сотрудника"/>
+                <Property Name="crea_date_time" Type="Edm.DateTimeOffset" Precision="7" sap:label="Метка времени" sap:quickinfo="Метка времени UTC в длинной форме (YYYYMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="crea_uname" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Имя пользователя" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="lchg_date_time" Type="Edm.DateTimeOffset" Precision="7" sap:label="Метка времени" sap:quickinfo="Метка времени UTC в длинной форме (YYYYMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="lchg_uname" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Имя пользователя" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Имеет черновик" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ActiveUUID" Type="Edm.Guid" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата создания черновика" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата последнего изменения черновика" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Имеет акт. документ" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Активно" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="ZCKS4_COMPH_SRV.assoc_C0236D87B21489B657D6EAF1281DB7AF" FromRole="FromRole_assoc_C0236D87B21489B657D6EAF1281DB7AF" ToRole="ToRole_assoc_C0236D87B21489B657D6EAF1281DB7AF"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="ZCKS4_COMPH_SRV.assoc_E79A1922A7795AEB2E1ECC7A85D4C929" FromRole="FromRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929" ToRole="ToRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
+                <NavigationProperty Name="to_bp_vh" Relationship="ZCKS4_COMPH_SRV.assoc_C434E2B79BB41DFCA3D841FC6D11F974" FromRole="FromRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974" ToRole="ToRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974"/>
+                <NavigationProperty Name="to_compp" Relationship="ZCKS4_COMPH_SRV.assoc_4EA6446900C0FFE07D2D2FA866E56432" FromRole="FromRole_assoc_4EA6446900C0FFE07D2D2FA866E56432" ToRole="ToRole_assoc_4EA6446900C0FFE07D2D2FA866E56432"/>
+            </EntityType>
+            <EntityType Name="ZCKS4_C_EMPL_COMPPType" sap:label="Навыки сотрудников" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="db_key"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="db_key" Type="Edm.Guid" Nullable="false" sap:label="NodeID" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="parent_key" Type="Edm.Guid" sap:label="NodeID" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="competence" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:text="to_comp_vh/txtlg" sap:label="Навык сотрудника" sap:value-list="standard"/>
+                <Property Name="crea_date_time" Type="Edm.DateTimeOffset" Precision="7" sap:label="Метка времени" sap:quickinfo="Метка времени UTC в длинной форме (YYYYMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="crea_uname" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Имя пользователя" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="lchg_date_time" Type="Edm.DateTimeOffset" Precision="7" sap:label="Метка времени" sap:quickinfo="Метка времени UTC в длинной форме (YYYYMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="lchg_uname" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Имя пользователя" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Имеет черновик" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ActiveUUID" Type="Edm.Guid" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата создания черновика" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Дата последнего изменения черновика" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Имеет акт. документ" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Активно" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="to_comph" Relationship="ZCKS4_COMPH_SRV.assoc_4EA6446900C0FFE07D2D2FA866E56432" FromRole="ToRole_assoc_4EA6446900C0FFE07D2D2FA866E56432" ToRole="FromRole_assoc_4EA6446900C0FFE07D2D2FA866E56432"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="ZCKS4_COMPH_SRV.assoc_A8FB488965DCB6ED19DB0D64BD553845" FromRole="FromRole_assoc_A8FB488965DCB6ED19DB0D64BD553845" ToRole="ToRole_assoc_A8FB488965DCB6ED19DB0D64BD553845"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="ZCKS4_COMPH_SRV.assoc_7190E914E4CDEB7A256A7F2C8223BD17" FromRole="FromRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17" ToRole="ToRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17"/>
+                <NavigationProperty Name="to_comp_vh" Relationship="ZCKS4_COMPH_SRV.assoc_4FBC19FFCA39FDC59003758B20D1EB4C" FromRole="FromRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C" ToRole="ToRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C"/>
+            </EntityType>
+            <EntityType Name="ZCKS4_I_COMPETENCE_VHType" sap:label="Навыки" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="competence"/>
+                </Key>
+                <Property Name="competence" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative" sap:text="txtlg" sap:label="Код" sap:quickinfo="Навык сотрудника"/>
+                <Property Name="txtlg" Type="Edm.String" MaxLength="128" sap:label="Компетенция" sap:quickinfo="Наименование компетенции"/>
+            </EntityType>
+            <EntityType Name="ZI_BusinessPartnerVHType" sap:label="Business Partner Value Help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BusinessPartner"/>
+                </Key>
+                <Property Name="BusinessPartner" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="BusinessPartner_Text" sap:label="Деловой партнер" sap:quickinfo="Номер делового партнера"/>
+                <Property Name="BusinessPartner_Text" Type="Edm.String" MaxLength="81" sap:label="Описание делового партнера" sap:quickinfo="ИМЯ ДЕЛОВОГО ПАРТНЕРА" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="FormOfAddress" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Обращение" sap:quickinfo="Ключ обращения"/>
+                <Property Name="FormOfAddressName" Type="Edm.String" MaxLength="30" sap:label="Обращение" sap:quickinfo="Текст обращения"/>
+                <Property Name="FirstName" Type="Edm.String" MaxLength="40" sap:label="Имя" sap:quickinfo="Имя делового партнера (лицо)"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="40" sap:label="Фамилия" sap:quickinfo="Фамилия делового партнера (лицо)"/>
+                <Property Name="BirthDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Дата рождения" sap:quickinfo="Дата рождения делового партнера"/>
+                <Property Name="BusinessPartnerCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Тип партнера" sap:quickinfo="Тип делового партнера"/>
+                <Property Name="BusinessPartnerIDByExtSystem" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Внешний № партнера" sap:quickinfo="Номер делового партнера во внешней системе"/>
+                <Property Name="BusinessPartnerName" Type="Edm.String" MaxLength="81"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Группа полномочий"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Инд. выполнения цели" sap:quickinfo="Индикатор выполнения целевого назначения"/>
+            </EntityType>
+            <ComplexType Name="ValidationFunctionResult">
+                <Property Name="IsValid" Type="Edm.Boolean" sap:label="Явл. действ."/>
+            </ComplexType>
+            <Association Name="assoc_E79A1922A7795AEB2E1ECC7A85D4C929" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="1" Role="FromRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="0..1" Role="ToRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
+            </Association>
+            <Association Name="assoc_C434E2B79BB41DFCA3D841FC6D11F974" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="1" Role="FromRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974"/>
+                <End Type="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType" Multiplicity="0..1" Role="ToRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974">
+                        <PropertyRef Name="BusinessPartner"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974">
+                        <PropertyRef Name="empl"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_4EA6446900C0FFE07D2D2FA866E56432" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="1" Role="FromRole_assoc_4EA6446900C0FFE07D2D2FA866E56432">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" Multiplicity="*" Role="ToRole_assoc_4EA6446900C0FFE07D2D2FA866E56432"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_4EA6446900C0FFE07D2D2FA866E56432">
+                        <PropertyRef Name="db_key"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_4EA6446900C0FFE07D2D2FA866E56432">
+                        <PropertyRef Name="parent_key"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_C0236D87B21489B657D6EAF1281DB7AF" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="1" Role="FromRole_assoc_C0236D87B21489B657D6EAF1281DB7AF"/>
+                <End Type="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_C0236D87B21489B657D6EAF1281DB7AF"/>
+            </Association>
+            <Association Name="assoc_A8FB488965DCB6ED19DB0D64BD553845" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" Multiplicity="1" Role="FromRole_assoc_A8FB488965DCB6ED19DB0D64BD553845"/>
+                <End Type="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_A8FB488965DCB6ED19DB0D64BD553845"/>
+            </Association>
+            <Association Name="assoc_7190E914E4CDEB7A256A7F2C8223BD17" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" Multiplicity="1" Role="FromRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17"/>
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" Multiplicity="0..1" Role="ToRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17"/>
+            </Association>
+            <Association Name="assoc_4FBC19FFCA39FDC59003758B20D1EB4C" sap:content-version="1">
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" Multiplicity="1" Role="FromRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C"/>
+                <End Type="ZCKS4_COMPH_SRV.ZCKS4_I_COMPETENCE_VHType" Multiplicity="0..1" Role="ToRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C">
+                        <PropertyRef Name="competence"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C">
+                        <PropertyRef Name="competence"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZCKS4_COMPH_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZCKS4_C_EMPL_COMPH" EntityType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" sap:content-version="1"/>
+                <EntitySet Name="ZCKS4_C_EMPL_COMPP" EntityType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:content-version="1"/>
+                <EntitySet Name="ZCKS4_I_COMPETENCE_VH" EntityType="ZCKS4_COMPH_SRV.ZCKS4_I_COMPETENCE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_BusinessPartnerVH" EntityType="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_7190E914E4CDEB7A256A7F2C8223BD17" Association="ZCKS4_COMPH_SRV.assoc_7190E914E4CDEB7A256A7F2C8223BD17" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPP" Role="FromRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17"/>
+                    <End EntitySet="ZCKS4_C_EMPL_COMPP" Role="ToRole_assoc_7190E914E4CDEB7A256A7F2C8223BD17"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C434E2B79BB41DFCA3D841FC6D11F974" Association="ZCKS4_COMPH_SRV.assoc_C434E2B79BB41DFCA3D841FC6D11F974" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPH" Role="FromRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974"/>
+                    <End EntitySet="ZI_BusinessPartnerVH" Role="ToRole_assoc_C434E2B79BB41DFCA3D841FC6D11F974"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_E79A1922A7795AEB2E1ECC7A85D4C929" Association="ZCKS4_COMPH_SRV.assoc_E79A1922A7795AEB2E1ECC7A85D4C929" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPH" Role="FromRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
+                    <End EntitySet="ZCKS4_C_EMPL_COMPH" Role="ToRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_4FBC19FFCA39FDC59003758B20D1EB4C" Association="ZCKS4_COMPH_SRV.assoc_4FBC19FFCA39FDC59003758B20D1EB4C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPP" Role="FromRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C"/>
+                    <End EntitySet="ZCKS4_I_COMPETENCE_VH" Role="ToRole_assoc_4FBC19FFCA39FDC59003758B20D1EB4C"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A8FB488965DCB6ED19DB0D64BD553845" Association="ZCKS4_COMPH_SRV.assoc_A8FB488965DCB6ED19DB0D64BD553845" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPP" Role="FromRole_assoc_A8FB488965DCB6ED19DB0D64BD553845"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_A8FB488965DCB6ED19DB0D64BD553845"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C0236D87B21489B657D6EAF1281DB7AF" Association="ZCKS4_COMPH_SRV.assoc_C0236D87B21489B657D6EAF1281DB7AF" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPH" Role="FromRole_assoc_C0236D87B21489B657D6EAF1281DB7AF"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_C0236D87B21489B657D6EAF1281DB7AF"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_4EA6446900C0FFE07D2D2FA866E56432" Association="ZCKS4_COMPH_SRV.assoc_4EA6446900C0FFE07D2D2FA866E56432" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZCKS4_C_EMPL_COMPH" Role="FromRole_assoc_4EA6446900C0FFE07D2D2FA866E56432"/>
+                    <End EntitySet="ZCKS4_C_EMPL_COMPP" Role="ToRole_assoc_4EA6446900C0FFE07D2D2FA866E56432"/>
+                </AssociationSet>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPHActivation" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" EntitySet="ZCKS4_C_EMPL_COMPH" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" sap:applicable-path="Activation_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPHEdit" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" EntitySet="ZCKS4_C_EMPL_COMPH" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" sap:applicable-path="Edit_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPHPreparation" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" EntitySet="ZCKS4_C_EMPL_COMPH" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" sap:applicable-path="Preparation_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPHValidation" ReturnType="ZCKS4_COMPH_SRV.ValidationFunctionResult" m:HttpMethod="GET" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" sap:applicable-path="Validation_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPPPreparation" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" EntitySet="ZCKS4_C_EMPL_COMPP" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:applicable-path="Preparation_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPPValidation" ReturnType="ZCKS4_COMPH_SRV.ValidationFunctionResult" m:HttpMethod="GET" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:applicable-path="Validation_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPH" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="ActivationAction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPHActivation"/>
+                        <PropertyValue Property="EditAction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPHEdit"/>
+                        <PropertyValue Property="PreparationAction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPHPreparation"/>
+                        <PropertyValue Property="ValidationFunction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPHValidation"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Activation_ac</PropertyPath>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Activation_ac</PropertyPath>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPP" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftNode">
+                    <Record>
+                        <PropertyValue Property="PreparationAction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPPPreparation"/>
+                        <PropertyValue Property="ValidationFunction" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPPValidation"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.DraftActivationVia">
+                    <Collection>
+                        <String>ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPH</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Preparation_ac</PropertyPath>
+                                <PropertyPath>Validation_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/empl" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Business Partner Value Help"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_BusinessPartnerVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="empl"/>
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner_Text"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FormOfAddressName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FirstName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BirthDate"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerCategory"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerIDByExtSystem"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/competence" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Навыки"/>
+                        <PropertyValue Property="CollectionPath" String="ZCKS4_I_COMPETENCE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="competence"/>
+                                    <PropertyValue Property="ValueListProperty" String="competence"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="txtlg"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>empl</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>db_key</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://sap17.bdo.ru/sap/opu/odata/sap/ZCKS4_COMPH_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://sap17.bdo.ru/sap/opu/odata/sap/ZCKS4_COMPH_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

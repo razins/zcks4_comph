@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zcks4_comph_srv/$metadata">
+        <edmx:Include Namespace="ZCKS4_COMPH_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zcks4_comph_anno_mdl_01.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/ActiveUUID">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/db_key">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/Activation_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/Edit_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/Preparation_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType/Validation_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Общая информация"/>
+                            <PropertyValue Property="ID" String="GeneralInfo"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Main"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Created"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#audit"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Last Changed"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#audit2"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Навыки"/>
+                            <PropertyValue Property="ID" String="ITEMS"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_compp/@UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Main">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="empl"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="resume"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="audit">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="crea_date_time"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="crea_uname"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="audit2">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="lchg_date_time"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="lchg_uname"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Компетенции сотрудников"/>
+                        <PropertyValue Property="TypeNamePlural" String="Компетенции сотрудников"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="empl"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="At"/>
+                            <PropertyValue Property="Value" Path="crea_date_time"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="By"/>
+                            <PropertyValue Property="Value" Path="crea_uname"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="crea_date_time"/>
+                                    <PropertyValue Property="Descending" Bool="true"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>empl</PropertyPath>
+                        <PropertyPath>resume</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/ActiveUUID">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/db_key">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/parent_key">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/Preparation_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/Validation_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/competence">
+                <Annotation Term="Common.Text" Path="to_comp_vh/txtlg">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Навык"/>
+                            <PropertyValue Property="ID" String="Info"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String=""/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Main"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Created"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#audit"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Last Changed"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#audit2"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Main">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="competence"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="audit">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="crea_date_time"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="crea_uname"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="audit2">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="lchg_date_time"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="lchg_uname"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Навык"/>
+                            <PropertyValue Property="Value" Path="competence"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="At"/>
+                            <PropertyValue Property="Value" Path="crea_date_time"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="By"/>
+                            <PropertyValue Property="Value" Path="crea_uname"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType/FormOfAddress">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType/BusinessPartnerName">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType/AuthorizationGroup">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZI_BusinessPartnerVHType/IsBusinessPurposeCompleted">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

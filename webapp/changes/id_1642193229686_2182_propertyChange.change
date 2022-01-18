@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1642193229686_2182_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "zcks4.zcks4comph",
+    "packageName": "",
+    "content": {
+        "property": "visible",
+        "newValue": true
+    },
+    "selector": {
+        "id": "zcks4.zcks4comph::sap.suite.ui.generic.template.ObjectPage.view.Details::ZCKS4_C_EMPL_COMPH--com.sap.vocabularies.UI.v1.FieldGroup::Main::resume::GroupElement",
+        "idIsLocal": false,
+        "type": "sap.ui.comp.smartform.SmartGroup"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/zcks4.zcks4comph/changes/",
+    "projectId": "zcks4.zcks4comph",
+    "creation": 1642193981102,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "latest",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "1.0.0",
+        "to": "1.0.0",
+        "creation": "1.0.0"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
