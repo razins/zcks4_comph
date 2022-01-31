@@ -245,6 +245,12 @@
             <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/parent_key">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/Action_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/Delete_competence_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
             <Annotations Target="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType/Preparation_ac">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
@@ -322,6 +328,11 @@
                 </Annotation>
                 <Annotation Term="UI.LineItem">
                     <Collection>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Удалить навыки"/>
+                            <PropertyValue Property="Action" String="ZCKS4_COMPH_SRV.ZCKS4_COMPH_SRV_Entities/ZCKS4_C_EMPL_COMPPDelete_competence"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="Навык"/>
                             <PropertyValue Property="Value" Path="competence"/>

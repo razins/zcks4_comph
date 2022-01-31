@@ -84,6 +84,8 @@
                     <PropertyRef Name="db_key"/>
                     <PropertyRef Name="IsActiveEntity"/>
                 </Key>
+                <Property Name="Action_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Delete_competence_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="db_key" Type="Edm.Guid" Nullable="false" sap:label="NodeID" sap:heading="" sap:creatable="false" sap:updatable="false"/>
@@ -130,6 +132,9 @@
             </EntityType>
             <ComplexType Name="ValidationFunctionResult">
                 <Property Name="IsValid" Type="Edm.Boolean" sap:label="Явл. действ."/>
+            </ComplexType>
+            <ComplexType Name="DummyFunctionImportResult">
+                <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/>
             </ComplexType>
             <Association Name="assoc_E79A1922A7795AEB2E1ECC7A85D4C929" sap:content-version="1">
                 <End Type="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPHType" Multiplicity="1" Role="FromRole_assoc_E79A1922A7795AEB2E1ECC7A85D4C929"/>
@@ -238,6 +243,14 @@
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
                     <Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/>
                 </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPPAction" ReturnType="ZCKS4_COMPH_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:applicable-path="Action_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="ZCKS4_C_EMPL_COMPPDelete_competence" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" EntitySet="ZCKS4_C_EMPL_COMPP" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:applicable-path="Delete_competence_ac">
+                    <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
                 <FunctionImport Name="ZCKS4_C_EMPL_COMPPPreparation" ReturnType="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" EntitySet="ZCKS4_C_EMPL_COMPP" m:HttpMethod="POST" sap:action-for="ZCKS4_COMPH_SRV.ZCKS4_C_EMPL_COMPPType" sap:applicable-path="Preparation_ac">
                     <Parameter Name="db_key" Type="Edm.Guid" Mode="In"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
@@ -299,6 +312,8 @@
                     <Record>
                         <PropertyValue Property="NonFilterableProperties">
                             <Collection>
+                                <PropertyPath>Action_ac</PropertyPath>
+                                <PropertyPath>Delete_competence_ac</PropertyPath>
                                 <PropertyPath>Preparation_ac</PropertyPath>
                                 <PropertyPath>Validation_ac</PropertyPath>
                             </Collection>
@@ -309,6 +324,8 @@
                     <Record>
                         <PropertyValue Property="NonSortableProperties">
                             <Collection>
+                                <PropertyPath>Action_ac</PropertyPath>
+                                <PropertyPath>Delete_competence_ac</PropertyPath>
                                 <PropertyPath>Preparation_ac</PropertyPath>
                                 <PropertyPath>Validation_ac</PropertyPath>
                             </Collection>
